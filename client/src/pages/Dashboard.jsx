@@ -68,13 +68,13 @@ export default function Dashboard() {
           <div className="flex items-center gap-3">
             <button
               onClick={handleOpenCreate}
-              className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition"
+              className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition cursor-pointer"
             >
               + New Note
             </button>
             <button
               onClick={logout}
-              className="text-sm text-gray-500 hover:text-red-500 transition font-medium"
+              className="text-sm text-gray-500 hover:text-red-500 transition font-medium cursor-pointer"
             >
               Logout
             </button>
@@ -95,7 +95,7 @@ export default function Dashboard() {
             <p className="text-gray-400 text-sm mb-6">Click "New Note" to get started</p>
             <button
               onClick={handleOpenCreate}
-              className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-5 py-2.5 rounded-lg transition"
+              className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-5 py-2.5 rounded-lg transition cursor-pointer"
             >
               Create your first note
             </button>

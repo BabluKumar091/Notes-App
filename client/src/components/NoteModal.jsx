@@ -55,7 +55,7 @@ export default function NoteModal({ isOpen, onClose, onSave, existingNote }) {
           </h2>
           <button
             onClick={onClose}
-            className="text-gray-400 hover:text-gray-600 text-xl leading-none transition"
+            className="text-gray-400 hover:text-gray-600 text-xl leading-none transition cursor-pointer"
           >
             ✕
           </button>
@@ -96,14 +96,14 @@ export default function NoteModal({ isOpen, onClose, onSave, existingNote }) {
             <button
               type="button"
               onClick={onClose}
-              className="flex-1 border border-gray-300 text-gray-700 text-sm font-medium py-2.5 rounded-lg hover:bg-gray-50 transition"
+              className="flex-1 border border-gray-300 text-gray-700 text-sm font-medium py-2.5 rounded-lg hover:bg-gray-50 transition cursor-pointer"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={loading}
-              className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2.5 rounded-lg transition disabled:opacity-60"
+              className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2.5 rounded-lg transition disabled:opacity-60 cursor-pointer"
             >
               {loading ? 'Saving...' : existingNote ? 'Update Note' : 'Save Note'}
             </button>

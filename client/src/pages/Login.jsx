@@ -28,57 +28,85 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
-      <div className="bg-white rounded-2xl shadow-md w-full max-w-md p-8">
-        <h1 className="text-2xl font-bold text-gray-800 mb-1">Welcome back</h1>
-        <p className="text-gray-500 text-sm mb-6">Sign in to your notes</p>
-
-        {error && (
-          <div className="bg-red-50 border border-red-200 text-red-600 text-sm rounded-lg px-4 py-3 mb-4">
-            {error}
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-8">
+      <div className="w-full max-w-md">
+        {/* Card Container */}
+        <div className="bg-white rounded-3xl shadow-lg overflow-hidden p-8">
+          {/* Header */}
+          <div className="text-center mb-8">
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">Notes App</h1>
+            <p className="text-gray-600 text-base">Welcome back to your notes</p>
           </div>
-        )}
 
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-            <input
-              name="email"
-              type="email"
-              placeholder="you@example.com"
-              value={form.email}
-              onChange={handleChange}
-              required
-              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
-            <input
-              name="password"
-              type="password"
-              placeholder="Your password"
-              value={form.password}
-              onChange={handleChange}
-              required
-              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 rounded-lg transition disabled:opacity-60"
-          >
-            {loading ? 'Signing in...' : 'Sign In'}
-          </button>
-        </form>
+          {/* Error Message */}
+          {error && (
+            <div className="bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg px-4 py-3 mb-6 animate-pulse">
+              {error}
+            </div>
+          )}
 
-        <p className="text-center text-sm text-gray-500 mt-5">
-          Don't have an account?{' '}
-          <Link to="/register" className="text-blue-600 hover:underline font-medium">
-            Register
-          </Link>
-        </p>
+          {/* Form */}
+          <form onSubmit={handleSubmit} className="space-y-5">
+            {/* Email Input */}
+            <div>
+              <label className="block text-sm font-semibold text-gray-900 mb-2">Email Address</label>
+              <input
+                name="email"
+                type="email"
+                placeholder="your@email.com"
+                value={form.email}
+                onChange={handleChange}
+                required
+                disabled={loading}
+                className="w-full px-4 py-3 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 transition-all duration-200 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 disabled:bg-gray-50 disabled:text-gray-500"
+              />
+            </div>
+
+            {/* Password Input */}
+            <div>
+              <label className="block text-sm font-semibold text-gray-900 mb-2">Password</label>
+              <input
+                name="password"
+                type="password"
+                placeholder="••••••••"
+                value={form.password}
+                onChange={handleChange}
+                required
+                disabled={loading}
+                className="w-full px-4 py-3 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 transition-all duration-200 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 disabled:bg-gray-50 disabled:text-gray-500"
+              />
+            </div>
+
+            {/* Submit Button */}
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white font-semibold py-3 rounded-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-lg"
+            >
+              {loading ? (
+                <span className="flex items-center justify-center">
+                  <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Signing in...
+                </span>
+              ) : (
+                'Sign In'
+              )}
+            </button>
+          </form>
+
+          {/* Footer Link */}
+          <div className="mt-6 pt-6 border-t border-gray-100 text-center">
+            <p className="text-gray-600 text-sm">
+              Don't have an account?{' '}
+              <Link to="/register" className="text-blue-500 font-semibold hover:text-blue-600 transition-colors duration-200">
+                Create one now
+              </Link>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
