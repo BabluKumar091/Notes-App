@@ -1,6 +1,6 @@
 # 📝 Notes App
 
-A full-stack personal notes application where users can register, log in, and manage their own notes.
+A full-stack Notes App where users can register and log in securely using JWT authentication. Once logged in, users can create, edit, and delete their personal notes — with each user only seeing their own data. The app is built with React on the frontend, Node.js + Express on the backend, and MongoDB Atlas as the live database, deployed on Netlify and Railway.
 
 ---
 
@@ -36,7 +36,7 @@ notes-app/
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/your-username/notes-app.git
+git clone https://github.com/BabluKumar091/notes-app.git
 cd notes-app
 ```
 
